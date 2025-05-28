@@ -1295,8 +1295,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 // Import React Native Paper components and theming utilities
 import {
   Card,
-  Title,
-  Paragraph,
+  Text,
   Button,
   Switch,
   Surface,
@@ -1327,20 +1326,20 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
       {/* Theme Toggle Card */}
       <Card style={styles.card}>
         <Card.Content>
-          <Title>Theme Settings</Title>
-          <Paragraph>
+          <Text variant="titleLarge">Theme Settings</Text>
+          <Text variant="bodyLarge">
             React Native Paper supports Material Design 3 theming with automatic 
             light and dark mode support.
-          </Paragraph>
+          </Text>
           
           {/* Theme toggle switch */}
           <Surface style={styles.themeToggle} elevation={1}>
             <View style={styles.toggleRow}>
               <View style={styles.toggleText}>
-                <Paragraph style={styles.toggleTitle}>Dark Mode</Paragraph>
-                <Paragraph style={styles.toggleSubtitle}>
+                <Text variant="titleMedium">Dark Mode</Text>
+                <Text variant="bodyMedium">
                   {isDarkTheme ? 'Dark theme active' : 'Light theme active'}
-                </Paragraph>
+                </Text>
               </View>
               <Switch
                 value={isDarkTheme}
@@ -1354,14 +1353,14 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
       {/* Current Theme Info Card */}
       <Card style={styles.card}>
         <Card.Content>
-          <Title>Current Theme Information</Title>
-          <Paragraph>Theme version and configuration details:</Paragraph>
+          <Text variant="titleLarge">Current Theme Information</Text>
+          <Text variant="bodyLarge">Theme version and configuration details:</Text>
           
           <Surface style={styles.infoSurface} elevation={1}>
-            <Paragraph><strong>Theme Version:</strong> Material Design 3</Paragraph>
-            <Paragraph><strong>Mode:</strong> {isDarkTheme ? 'Dark' : 'Light'}</Paragraph>
-            <Paragraph><strong>Round Factor:</strong> {theme.roundness}px</Paragraph>
-            <Paragraph><strong>Animation Scale:</strong> {theme.animation.scale}</Paragraph>
+            <Text variant="bodyLarge"><Text variant="titleMedium">Theme Version:</Text> Material Design 3</Text>
+            <Text variant="bodyLarge"><Text variant="titleMedium">Mode:</Text> {isDarkTheme ? 'Dark' : 'Light'}</Text>
+            <Text variant="bodyLarge"><Text variant="titleMedium">Round Factor:</Text> {theme.roundness}px</Text>
+            <Text variant="bodyLarge"><Text variant="titleMedium">Animation Scale:</Text> {theme.animation.scale}</Text>
           </Surface>
         </Card.Content>
       </Card>
@@ -1382,26 +1381,26 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
         
         {showColorPalette && (
           <Card.Content>
-            <Paragraph style={styles.paletteDescription}>
+            <Text variant="bodyLarge" style={styles.paletteDescription}>
               The Material Design 3 color system includes semantic color roles 
               that adapt automatically between light and dark themes.
-            </Paragraph>
+            </Text>
             
             {/* Primary Colors */}
             <View style={styles.colorSection}>
-              <Paragraph style={styles.sectionTitle}>Primary Colors</Paragraph>
+              <Text variant="titleMedium" style={styles.sectionTitle}>Primary Colors</Text>
               <View style={styles.colorRow}>
                 <Surface 
                   style={[styles.colorSwatch, { backgroundColor: theme.colors.primary }]} 
                   elevation={2}
                 >
-                  <Paragraph style={[styles.colorLabel, { color: theme.colors.onPrimary }]}>
+                  <Text variant="bodyLarge" style={[styles.colorLabel, { color: theme.colors.onPrimary }]}>
                     Primary
-                  </Paragraph>
+                  </Text>
                 </Surface>
                 <View style={styles.colorInfo}>
-                  <Paragraph style={styles.colorName}>Primary</Paragraph>
-                  <Paragraph style={styles.colorValue}>{formatColor(theme.colors.primary)}</Paragraph>
+                  <Text variant="titleMedium" style={styles.colorName}>Primary</Text>
+                  <Text variant="bodyMedium" style={styles.colorValue}>{formatColor(theme.colors.primary)}</Text>
                 </View>
               </View>
               
@@ -1410,51 +1409,51 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
                   style={[styles.colorSwatch, { backgroundColor: theme.colors.primaryContainer }]} 
                   elevation={2}
                 >
-                  <Paragraph style={[styles.colorLabel, { color: theme.colors.onPrimaryContainer }]}>
+                  <Text variant="bodyLarge" style={[styles.colorLabel, { color: theme.colors.onPrimaryContainer }]}>
                     Container
-                  </Paragraph>
+                  </Text>
                 </Surface>
                 <View style={styles.colorInfo}>
-                  <Paragraph style={styles.colorName}>Primary Container</Paragraph>
-                  <Paragraph style={styles.colorValue}>{formatColor(theme.colors.primaryContainer)}</Paragraph>
+                  <Text variant="titleMedium" style={styles.colorName}>Primary Container</Text>
+                  <Text variant="bodyMedium" style={styles.colorValue}>{formatColor(theme.colors.primaryContainer)}</Text>
                 </View>
               </View>
             </View>
 
             {/* Secondary Colors */}
             <View style={styles.colorSection}>
-              <Paragraph style={styles.sectionTitle}>Secondary Colors</Paragraph>
+              <Text variant="titleMedium" style={styles.sectionTitle}>Secondary Colors</Text>
               <View style={styles.colorRow}>
                 <Surface 
                   style={[styles.colorSwatch, { backgroundColor: theme.colors.secondary }]} 
                   elevation={2}
                 >
-                  <Paragraph style={[styles.colorLabel, { color: theme.colors.onSecondary }]}>
+                  <Text variant="bodyLarge" style={[styles.colorLabel, { color: theme.colors.onSecondary }]}>
                     Secondary
-                  </Paragraph>
+                  </Text>
                 </Surface>
                 <View style={styles.colorInfo}>
-                  <Paragraph style={styles.colorName}>Secondary</Paragraph>
-                  <Paragraph style={styles.colorValue}>{formatColor(theme.colors.secondary)}</Paragraph>
+                  <Text variant="titleMedium" style={styles.colorName}>Secondary</Text>
+                  <Text variant="bodyMedium" style={styles.colorValue}>{formatColor(theme.colors.secondary)}</Text>
                 </View>
               </View>
             </View>
 
             {/* Surface Colors */}
             <View style={styles.colorSection}>
-              <Paragraph style={styles.sectionTitle}>Surface Colors</Paragraph>
+              <Text variant="titleMedium" style={styles.sectionTitle}>Surface Colors</Text>
               <View style={styles.colorRow}>
                 <Surface 
                   style={[styles.colorSwatch, { backgroundColor: theme.colors.surface }]} 
                   elevation={2}
                 >
-                  <Paragraph style={[styles.colorLabel, { color: theme.colors.onSurface }]}>
+                  <Text variant="bodyLarge" style={[styles.colorLabel, { color: theme.colors.onSurface }]}>
                     Surface
-                  </Paragraph>
+                  </Text>
                 </Surface>
                 <View style={styles.colorInfo}>
-                  <Paragraph style={styles.colorName}>Surface</Paragraph>
-                  <Paragraph style={styles.colorValue}>{formatColor(theme.colors.surface)}</Paragraph>
+                  <Text variant="titleMedium" style={styles.colorName}>Surface</Text>
+                  <Text variant="bodyMedium" style={styles.colorValue}>{formatColor(theme.colors.surface)}</Text>
                 </View>
               </View>
               
@@ -1463,32 +1462,32 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
                   style={[styles.colorSwatch, { backgroundColor: theme.colors.surfaceVariant }]} 
                   elevation={2}
                 >
-                  <Paragraph style={[styles.colorLabel, { color: theme.colors.onSurfaceVariant }]}>
+                  <Text variant="bodyLarge" style={[styles.colorLabel, { color: theme.colors.onSurfaceVariant }]}>
                     Variant
-                  </Paragraph>
+                  </Text>
                 </Surface>
                 <View style={styles.colorInfo}>
-                  <Paragraph style={styles.colorName}>Surface Variant</Paragraph>
-                  <Paragraph style={styles.colorValue}>{formatColor(theme.colors.surfaceVariant)}</Paragraph>
+                  <Text variant="titleMedium" style={styles.colorName}>Surface Variant</Text>
+                  <Text variant="bodyMedium" style={styles.colorValue}>{formatColor(theme.colors.surfaceVariant)}</Text>
                 </View>
               </View>
             </View>
 
             {/* Semantic Colors */}
             <View style={styles.colorSection}>
-              <Paragraph style={styles.sectionTitle}>Semantic Colors</Paragraph>
+              <Text variant="titleMedium" style={styles.sectionTitle}>Semantic Colors</Text>
               <View style={styles.colorRow}>
                 <Surface 
                   style={[styles.colorSwatch, { backgroundColor: theme.colors.error }]} 
                   elevation={2}
                 >
-                  <Paragraph style={[styles.colorLabel, { color: theme.colors.onError }]}>
+                  <Text variant="bodyLarge" style={[styles.colorLabel, { color: theme.colors.onError }]}>
                     Error
-                  </Paragraph>
+                  </Text>
                 </Surface>
                 <View style={styles.colorInfo}>
-                  <Paragraph style={styles.colorName}>Error</Paragraph>
-                  <Paragraph style={styles.colorValue}>{formatColor(theme.colors.error)}</Paragraph>
+                  <Text variant="titleMedium" style={styles.colorName}>Error</Text>
+                  <Text variant="bodyMedium" style={styles.colorValue}>{formatColor(theme.colors.error)}</Text>
                 </View>
               </View>
             </View>
@@ -1499,49 +1498,42 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
       {/* Typography Card */}
       <Card style={styles.card}>
         <Card.Content>
-          <Title>Typography Scale</Title>
-          <Paragraph>Material Design 3 typography system:</Paragraph>
+          <Text variant="titleLarge">Typography Scale</Text>
+          <Text variant="bodyLarge">Material Design 3 typography system:</Text>
           
           <Surface style={styles.typographyContainer} elevation={1}>
             {/* Display different text styles */}
             <View style={styles.textExample}>
-              <Title style={theme.fonts.displayLarge}>Display Large</Title>
-              <Paragraph style={styles.typeInfo}>Display Large - Headlines</Paragraph>
+              <Text variant="displayLarge">Display Large</Text>
+              <Text variant="bodyMedium" style={styles.typeInfo}>Display Large - Headlines</Text>
             </View>
             
             <Divider style={styles.textDivider} />
             
             <View style={styles.textExample}>
-              <Title style={theme.fonts.headlineMedium}>Headline Medium</Title>
-              <Paragraph style={styles.typeInfo}>Headline Medium - Section headers</Paragraph>
+              <Text variant="headlineMedium">Headline Medium</Text>
+              <Text variant="bodyMedium" style={styles.typeInfo}>Headline Medium - Section headers</Text>
             </View>
             
             <Divider style={styles.textDivider} />
             
             <View style={styles.textExample}>
-              <Title style={theme.fonts.titleLarge}>Title Large</Title>
-              <Paragraph style={styles.typeInfo}>Title Large - Card titles</Paragraph>
+              <Text variant="titleLarge">Title Large</Text>
+              <Text variant="bodyMedium" style={styles.typeInfo}>Title Large - Card titles</Text>
             </View>
             
             <Divider style={styles.textDivider} />
             
             <View style={styles.textExample}>
-              <Paragraph style={theme.fonts.bodyLarge}>Body Large - Primary text content</Paragraph>
-              <Paragraph style={styles.typeInfo}>Body Large - Main content</Paragraph>
+              <Text variant="bodyLarge">Body Large - Primary text content</Text>
+              <Text variant="bodyMedium" style={styles.typeInfo}>Body Large - Main content</Text>
             </View>
             
             <Divider style={styles.textDivider} />
             
             <View style={styles.textExample}>
-              <Paragraph style={theme.fonts.bodyMedium}>Body Medium - Secondary text content</Paragraph>
-              <Paragraph style={styles.typeInfo}>Body Medium - Supporting text</Paragraph>
-            </View>
-            
-            <Divider style={styles.textDivider} />
-            
-            <View style={styles.textExample}>
-              <Paragraph style={theme.fonts.labelLarge}>Label Large - Button text</Paragraph>
-              <Paragraph style={styles.typeInfo}>Label Large - Buttons and actions</Paragraph>
+              <Text variant="bodyMedium">Body Medium - Secondary text content</Text>
+              <Text variant="bodyMedium" style={styles.typeInfo}>Body Medium - Supporting text</Text>
             </View>
           </Surface>
         </Card.Content>
@@ -1550,12 +1542,12 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
       {/* Component Preview Card */}
       <Card style={styles.card}>
         <Card.Content>
-          <Title>Component Preview</Title>
-          <Paragraph>See how components look in the current theme:</Paragraph>
+          <Text variant="titleLarge">Component Preview</Text>
+          <Text variant="bodyLarge">See how components look in the current theme:</Text>
           
           {/* Preview different component states */}
           <View style={styles.previewSection}>
-            <Paragraph style={styles.previewTitle}>Buttons</Paragraph>
+            <Text variant="titleMedium" style={styles.previewTitle}>Buttons</Text>
             <View style={styles.buttonPreview}>
               <Button mode="contained">Contained</Button>
               <Button mode="outlined">Outlined</Button>
@@ -1566,7 +1558,7 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
           <Divider style={styles.previewDivider} />
           
           <View style={styles.previewSection}>
-            <Paragraph style={styles.previewTitle}>Chips</Paragraph>
+            <Text variant="titleMedium" style={styles.previewTitle}>Chips</Text>
             <View style={styles.chipPreview}>
               <Chip icon="star">Default</Chip>
               <Chip icon="heart" selected>Selected</Chip>
@@ -1577,7 +1569,7 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
           <Divider style={styles.previewDivider} />
           
           <View style={styles.previewSection}>
-            <Paragraph style={styles.previewTitle}>List Items</Paragraph>
+            <Text variant="titleMedium" style={styles.previewTitle}>List Items</Text>
             <List.Item
               title="Theme Preview Item"
               description="This shows how list items appear"
@@ -1591,8 +1583,8 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
       {/* Theme Tips Card */}
       <Card style={styles.card}>
         <Card.Content>
-          <Title>Theming Best Practices</Title>
-          <Paragraph>Tips for effective Material Design theming:</Paragraph>
+          <Text variant="titleLarge">Theming Best Practices</Text>
+          <Text variant="bodyLarge">Tips for effective Material Design theming:</Text>
           
           <List.Section>
             <List.Item
@@ -1608,7 +1600,7 @@ export default function ThemeScreen({ isDarkTheme, toggleTheme }) {
             <List.Item
               title="Test Accessibility"
               description="Ensure sufficient contrast ratios in both themes"
-              left={props => <List.Icon {...props} icon="accessibility" />}
+              left={props => <List.Icon {...props} icon="human" />}
             />
             <List.Item
               title="Consistent Typography"
@@ -1632,9 +1624,9 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   themeToggle: {
+    marginTop: 16,
     padding: 16,
-    marginTop: 12,
-    borderRadius: 12,
+    borderRadius: 8,
   },
   toggleRow: {
     flexDirection: 'row',
@@ -1644,77 +1636,64 @@ const styles = StyleSheet.create({
   toggleText: {
     flex: 1,
   },
-  toggleTitle: {
-    fontWeight: 'bold',
-  },
-  toggleSubtitle: {
-    opacity: 0.7,
-  },
   infoSurface: {
-    padding: 12,
-    marginTop: 8,
+    marginTop: 16,
+    padding: 16,
     borderRadius: 8,
   },
-  paletteDescription: {
-    marginBottom: 16,
-    fontStyle: 'italic',
-  },
   colorSection: {
-    marginVertical: 12,
+    marginTop: 24,
   },
   sectionTitle: {
-    fontWeight: 'bold',
-    marginBottom: 8,
+    marginBottom: 16,
   },
   colorRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 6,
+    marginBottom: 16,
   },
   colorSwatch: {
-    width: 60,
-    height: 40,
+    width: 100,
+    height: 100,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 12,
+    marginRight: 16,
   },
   colorLabel: {
-    fontSize: 10,
-    fontWeight: 'bold',
+    textAlign: 'center',
   },
   colorInfo: {
     flex: 1,
   },
   colorName: {
-    fontWeight: '500',
+    marginBottom: 4,
   },
   colorValue: {
-    fontSize: 12,
     opacity: 0.7,
-    fontFamily: 'monospace',
+  },
+  paletteDescription: {
+    marginBottom: 24,
   },
   typographyContainer: {
+    marginTop: 16,
     padding: 16,
-    marginTop: 8,
-    borderRadius: 12,
+    borderRadius: 8,
   },
   textExample: {
-    marginVertical: 8,
+    marginVertical: 12,
   },
   typeInfo: {
-    fontSize: 12,
     opacity: 0.7,
     marginTop: 4,
   },
   textDivider: {
-    marginVertical: 8,
+    marginVertical: 12,
   },
   previewSection: {
     marginVertical: 12,
   },
   previewTitle: {
-    fontWeight: 'bold',
     marginBottom: 8,
   },
   buttonPreview: {
@@ -1755,7 +1734,7 @@ const styles = StyleSheet.create({
 
 1. Create your final commit:
    - Review all your changes in GitHub Desktop
-   - Enter commit message: "Complete Material Design app with React Native Paper - All screens implemented with theming"
+   - Enter commit message: "Assignment Complete"
    - Click "Commit to main"
    - Click "Push origin"
 
